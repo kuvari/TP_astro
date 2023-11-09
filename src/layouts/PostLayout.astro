@@ -1,0 +1,20 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props
+
+---
+
+<Layout pageTitle={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <p>著者: {frontmatter.author}（{frontmatter.pubDate}に投稿）</p>
+
+  <div class="tags">
+    {frontmatter.tags.map((tag) => (
+      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
+
+  <slot />
+
+</Layout>
