@@ -1,7 +1,7 @@
 ---
 
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
+import '../scss/style.scss';
 
 const pageTitle = "astroでポートフォリオサイトを作ろう！";
 
@@ -24,24 +24,33 @@ const name = "Astro";
 
 const allPosts = await Astro.glob('../pages/posts/*.md');
 
+import { Image } from 'astro:assets';
+import main from '../assets/MainView.jpg';
+
 ---
 
 <Layout pageTitle={pageTitle}>
-		<p>ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
+	<div class="l-inner text-center padding-max">
+		<h1 class="">{pageTitle}</h1>
+		<div class="margin-max">
+			<Image class="aspect-video" src={main} alt="#" />
+		</div>
 
-    <ul>
+		<p class="margin-max">ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
+
+    <ul class="margin-min" >
 			{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}    </ul>
 
-		<p>以下は私に関するいくつかの事実です。</p>
-		<ul>
+		<p class="margin-max"> 以下は私に関するいくつかの事実です。</p>
+		<ul class="margin-min">
 			<li>私の名前は{identity.firstName}です。</li>
 			<li>{identity.country}に住んでおり、{identity.occupation}として働いています。</li>
 			{identity.hobbies.length >= 2 &&
 				<li>私の2つの趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。</li>
 			}
 		</ul>
-		<p>私のスキルは以下の通りです。</p>
-		<ul>
+		<p class="margin-max">私のスキルは以下の通りです。</p>
+		<ul class="margin-min">
 			{skills.map((skill) => <li>{skill}</li>)}
 		</ul>
 
@@ -51,11 +60,12 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 		{goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
 
-		<p>動的属性</p>
+		<p class="">動的属性</p>
 		<h3 class={name}>属性を式で指定できます</h3>
-		<h3>{`私の名前は${name}です`}</h3>
+		<h3 class="">{`私の名前は${name}です`}</h3>
 
-		<style define:vars={{skillColor}}>
+	</div>
+		<!-- <style define:vars={{skillColor}}>
 			h1 {
 				color: purple;
 				font-size: 4rem;
@@ -79,6 +89,6 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 				display: inline-block;
 				padding: 15px 20px;
 			}
-
-}
-		</style>
+			}
+		</style> -->
+	

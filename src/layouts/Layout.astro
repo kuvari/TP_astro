@@ -1,7 +1,7 @@
 ---
 import Header from './Header.astro';
 import Footer from './Footer.astro';
-import '../styles/global.css';
+import '../scss/style.scss';
 const { pageTitle } = Astro.props;
 ---
 
@@ -12,6 +12,7 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <title>{pageTitle}</title>
   </head>
   <body>

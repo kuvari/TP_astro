@@ -1,6 +1,61 @@
 ---
 ---
-<a href="/">ホーム</a>
-<a href="/about/">概要</a>
-<a href="/blog/">ブログ</a>
-<a href="/tags/">タグ</a>
+<ul calss="c-nav">
+  <li><a href="/">ホーム</a></li>
+  <li><a href="/about/">概要</a></li>
+  <li><a href="/blog/">ブログ</a></li>
+  <li><a href="/tags/">タグ</a></li>
+</ul>
+
+<style>
+.c-nav{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* @include mq(md){
+    flex-direction: row;
+  } */
+}
+.c-nav li{
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-nav li a{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  padding-block: 1rem;
+  padding-inline: 0.7rem;
+  /* @include mq(md){
+    padding-inline: myrem(20.48);
+  } */
+}
+
+.c-nav li::after{
+  content: "";
+  display: inline-block;
+  width: 0%;
+  height: 1px;
+  background: red;
+  position: absolute;
+  top: 75%;
+  left: 13%;
+  /* @include mq(md){
+    transition: .3s;
+  } */
+}
+.c-nav li:hover::after{
+  /* @include mq(md){
+    width: 74%;
+    transition: .3s;
+  } */
+}
+</style>
+
+

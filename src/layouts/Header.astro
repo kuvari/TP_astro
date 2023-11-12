@@ -7,10 +7,16 @@ import ThemeIcon from '../components/ThemeIcon.astro';
 
 ---
 
-<header>
-  <nav>
-    <Hamburger />
-    <ThemeIcon />
+<header class="fixed w-full">
+  <div class="l-inner flex flex-row justify-between">
+    <div>
+      <Hamburger />
+    </div>
+    <div>
+      <ThemeIcon />
+    </div>
+    </div>
+  <nav class="p-header__navs-sp">
     <Navigation />
   </nav>
 </header>

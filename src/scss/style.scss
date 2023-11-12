@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+
+//ハンバーガーメニューを開いている時は、背景を固定
+body.is-active {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.l-inner {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.l-inner__center{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.p-header__navs-sp{
+  display: flex;
+  color: black;
+  background: linear-gradient(90deg, rgba(79, 79, 79, 0.70) 0%, rgba(79, 79, 79, 0.70) 11%,#fff 11%,#fff 100%);
+  flex-direction: column;
+  gap: 3.75rem;
+  width: 100%;
+  height: 100vh;
+  padding-block: 3rem 18rem;
+  padding-inline: 25%;
+  font-size: 1rem;
+  position: fixed;
+  z-index: 10;
+  transform: translateX(-120%);
+  transition: .3s;
+  // @include mq(md){
+  //   display: none;
+  // }
+}
+.p-header__navs-sp.is-active{
+  transform: translateX(0);
+  transition: .3s;
+}
+
+h1{
+  font-size: 1.5rem;
+}
+
+.margin-min{
+  margin-top: 1rem;
+}
+.margin-max{
+  margin-top: 2rem;
+}
+.padding-max{
+  padding-top: 2rem;
+}
+ul li:not(:first-child){
+  margin-top: 0.6rem;
+}

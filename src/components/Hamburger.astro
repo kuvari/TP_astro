@@ -1,7 +1,59 @@
 ---
 ---
-<div class="hamburger">
-  <span class="line"></span>
-  <span class="line"></span>
-  <span class="line"></span>
+<div class="c-hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
 </div>
+
+<style>
+  .c-hamburger{
+    position: relative;
+    width: 1.5625rem;
+    height: 1.5rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.c-hamburger span{
+    position: absolute;
+    width: inherit;
+    height: 3px;
+    background-color: black;
+    transition: 0.38s;
+    margin-top: -0.21875rem;
+}
+
+.c-hamburger span:nth-child(1){
+    top: 15%;
+}
+
+.c-hamburger span:nth-child(2){
+    top: 50%;
+}
+
+.c-hamburger span:nth-child(3){
+    top: 85%;
+}
+
+.c-hamburger.is-active span:nth-child(1){
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.c-hamburger.is-active span:nth-child(2){
+    top: 50%;
+    opacity: 0;
+}
+
+.c-hamburger.is-active span:nth-child(3){
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+
+</style>
